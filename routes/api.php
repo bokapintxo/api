@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/dialogoak', function () {
+    return App\Models\Dialogo::all();
+});
+
+Route::get('/dialogoa/{id}', function ($id) {
+    return App\Models\Dialogo::findOrFail($id);
+});
